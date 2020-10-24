@@ -3,8 +3,8 @@ import React from 'react';
 import './Todo.css';
 function Todo({ text }) {
 	return (
-		<ListItem className='todo__list'>
-			<ListItemText primary={text} secondary={new Date().toLocaleString()} />
+		<ListItem>
+			<ListItemText primary={text} secondary={text} />
 		</ListItem>
 	);
 }
