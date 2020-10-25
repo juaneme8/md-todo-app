@@ -9,7 +9,7 @@ function Todo(props) {
 		<>
 			<ListItem>
 				<ListItemText primary={props.todo.todo} secondary={props.todo.timestamp} />
-				<DeleteIcon onClick={e => db.collection('todos').doc(props.todo.id).delete()}></DeleteIcon>
+				<DeleteIcon className='deleteBtn' onClick={e => db.collection('todos').doc(props.todo.id).delete()}></DeleteIcon>
 			</ListItem>
 		</>
 	);

@@ -1,0 +1,7 @@
+.deleteBtn {
+	cursor: pointer;
+}
+
+.deleteBtn:hover {
+	opacity: 0.5;
+}
