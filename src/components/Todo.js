@@ -1,11 +1,17 @@
-import { ListItem, ListItemText } from '@material-ui/core';
+import { ListItem, ListItemText, Modal } from '@material-ui/core';
 import React from 'react';
 import './Todo.css';
-function Todo({ text }) {
+import db from '../firebase';
+import DeleteIcon from '@material-ui/icons/Delete';
+
+function Todo(props) {
 	return (
-		<ListItem>
-			<ListItemText primary={text} secondary={text} />
-		</ListItem>
+		<>
+			<ListItem>
+				<ListItemText primary={props.todo.todo} secondary={props.todo.timestamp} />
+				<DeleteIcon onClick={e => db.collection('todos').doc(props.todo.id).delete()}></DeleteIcon>
+			</ListItem>
+		</>
 	);
 }
 
