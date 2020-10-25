@@ -3,7 +3,7 @@ import './App.css';
 import { Button, FormControl, InputLabel, Input, List } from '@material-ui/core';
 import Todo from './components/Todo';
 import db from './firebase';
-import firebase from 'firebase';
+import firebase from 'firebase/app'; //52.9K (gziped: 12.2K)
 
 function App() {
 	const [todos, setTodos] = useState([]);
