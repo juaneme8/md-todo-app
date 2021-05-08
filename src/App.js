@@ -4,8 +4,18 @@ import { Button, FormControl, InputLabel, Input, List } from '@material-ui/core'
 import Todo from './components/Todo';
 import db from './firebase';
 import firebase from 'firebase/app'; //52.9K (gziped: 12.2K)
+import {makeStyles} from '@material-ui/core/styles'
+
+const useStyles = makeStyles(theme => ({
+	container:{
+	    display: 'flex',
+    	justifyContent: 'center',
+    	alignContent: 'center',
+	}
+}))
 
 function App() {
+	const classes = useStyles();
 	const [todos, setTodos] = useState([]);
 	const [input, setInput] = useState('');
 
@@ -32,8 +42,8 @@ function App() {
 	return (
 		<div className='App'>
 			<h1>TODO App</h1>
-			<form>
-				<FormControl>
+			<form className={classes.container}> 
+				<FormControl > 
 					<InputLabel>Write a Todo</InputLabel>
 					<Input value={input} onChange={e => setInput(e.target.value)} />
 				</FormControl>
